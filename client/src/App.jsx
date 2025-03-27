@@ -14,6 +14,9 @@ import AdminPanel from "./components/admin-view/AdminPanel";
 import LoanInformation from "./components/user-view/LoanInformation";
 import AdminLogin from "./components/admin-view/AdminLogin";
 import B2BDashboard from "./components/business-view/B2BDashboard";
+import AboutUs from "./components/user-view/AboutUs";
+import CareerPage from "./components/user-view/CareerPage";
+import Home from "./pages/auth/Home";
 
 
 function App() {
@@ -31,11 +34,14 @@ function App() {
         {/* Routes with Navbar & Footer */}
         <Route element={<Layout />}>
           <Route path="/login" element={<Login updateAuth={updateAuth} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/userinput" element={<UserInput />} />
+          <Route path="/aboutus" element={<AboutUs/>} />
+          <Route path="/careers" element={<CareerPage />} />
 
           {/* Other Routes without Navbar & Footer */}
-          <Route path="/" element={<Login updateAuth={updateAuth} />} />
+          <Route path="/login" element={<Login updateAuth={updateAuth} />} />
           <Route path="/loan" element={<LoanInformation />} />
           <Route path="/admin-login" element={<AdminLogin />} />
         </Route>
